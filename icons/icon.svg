@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Hide Rumble Shorts">
+  <!--
+    Variation of the Rumble Shorts mark: original path, slightly larger and
+    shifted, with a red prohibition ring and slash stamped over it so the
+    cut-corner silhouette still reads.
+  -->
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#121417"/>
+
+  <g transform="translate(63 64) scale(3.28) translate(-14.07 -14)">
+    <path
+      fill="#85C742"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M22.3129 3.07227C23.244 3.07227 23.7899 4.12055 23.2563 4.88339L22.0073 6.66636C21.8136 6.94334 21.9005 7.32582 22.1818 7.51321C24.7383 9.21596 26.4232 12.1232 26.4233 15.4252C26.4231 20.6727 22.1697 24.9269 16.9222 24.9272C12.8343 24.9272 8.77183 24.9272 5.82867 24.9272C4.89773 24.9268 4.35299 23.8788 4.88692 23.116L6.13428 21.3331C6.3281 21.0561 6.24194 20.6736 5.96056 20.4862C3.40385 18.7834 1.71826 15.8756 1.71826 12.5734C1.71875 7.32598 5.97347 3.07227 11.221 3.07227H22.3129ZM15.5437 11.2384C13.7497 10.2026 12.7222 9.63232 11.7422 10.1776C10.78 10.7538 10.761 11.9286 10.761 14.0001C10.761 16.0716 10.7805 17.2458 11.743 17.8218L11.9271 17.9111C12.8541 18.2941 13.8617 17.7322 15.5437 16.761C17.2256 15.79 18.2163 15.1986 18.3481 14.2044L18.3626 14.0001C18.3449 12.8786 17.3376 12.2741 15.5437 11.2384Z"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <circle cx="64" cy="64" r="44" stroke="#121417" stroke-width="12"/>
+    <path d="M36 92 L92 36" stroke="#121417" stroke-width="12"/>
+    <circle cx="64" cy="64" r="44" stroke="#E23B2E" stroke-width="8"/>
+    <path d="M36 92 L92 36" stroke="#E23B2E" stroke-width="8"/>
+  </g>
+</svg>

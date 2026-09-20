@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Hide Rumble Shorts",
+  "version": "1.0.0",
+  "description": "Hide Rumble Shorts from the Subscriptions feed. Toggle on or off and edit the selectors if Rumble changes its markup.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Hide Rumble Shorts",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://rumble.com/*", "https://www.rumble.com/*"],
+      "js": ["defaults.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["storage"],
+  "host_permissions": ["https://rumble.com/*", "https://www.rumble.com/*"]
+}

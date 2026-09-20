@@ -1,0 +1,277 @@
+:root {
+  color-scheme: dark;
+  --bg: #121417;
+  --bg-elevated: #1b1f24;
+  --border: #2c333c;
+  --text: #f3f4f6;
+  --muted: #9aa3af;
+  --green: #85c742;
+  --green-dim: #3d6a1c;
+  --danger: #f87171;
+  --focus: #a3e635;
+  --radius: 10px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.popup {
+  width: 380px;
+  padding: 16px;
+}
+
+body.options {
+  min-height: 100vh;
+}
+
+.options-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.brand-icon {
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.subtitle,
+.lede,
+.field-help,
+.save-state,
+.footer,
+.optional {
+  color: var(--muted);
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+}
+
+.lede {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.status {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.status.ok {
+  border-color: var(--green-dim);
+}
+
+.status.warn {
+  border-color: #4b5563;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggle-track {
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background: #3f4750;
+  position: relative;
+  transition: background 0.15s ease;
+}
+
+.toggle-track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.15s ease;
+}
+
+.toggle input:checked + .toggle-track {
+  background: var(--green);
+}
+
+.toggle input:checked + .toggle-track::after {
+  transform: translateX(18px);
+}
+
+.toggle input:focus-visible + .toggle-track {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.toggle-label {
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 24px;
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field-help {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.field-help code,
+.docs code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  background: #0f1215;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+textarea,
+input[type="text"] {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #0f1215;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: 12px/1.45 ui-monospace, Consolas, monospace;
+  resize: vertical;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.button {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button.primary {
+  background: var(--green);
+  color: #10200a;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.button:hover {
+  filter: brightness(1.08);
+}
+
+.save-state {
+  min-height: 16px;
+  margin: 0;
+  font-size: 12px;
+}
+
+.save-state.error {
+  color: var(--danger);
+}
+
+.footer {
+  margin-top: 14px;
+  font-size: 12px;
+}
+
+a {
+  color: var(--green);
+}
+
+.docs {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.docs h2 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.docs p,
+.docs li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.docs ul {
+  padding-left: 18px;
+}

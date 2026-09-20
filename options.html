@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hide Rumble Shorts options</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="options">
+    <div class="options-shell">
+      <header class="header">
+        <div class="brand">
+          <img class="brand-icon" src="icons/icon.svg" alt="" width="36" height="36" />
+          <div>
+            <h1>Hide Rumble Shorts</h1>
+            <p class="subtitle">Edit the filter if Rumble changes its markup</p>
+          </div>
+        </div>
+        <label class="toggle" title="Enable or disable hiding Shorts">
+          <input id="enabled" type="checkbox" />
+          <span class="toggle-track" aria-hidden="true"></span>
+          <span id="enabledLabel" class="toggle-label">On</span>
+        </label>
+      </header>
+
+      <p class="lede">
+        On a logged-in Subscriptions feed, Rumble currently injects a
+        <code>&lt;rum-shorts-row&gt;</code> web component. This extension hides matching
+        elements with CSS and keeps hiding them if the feed loads more items later.
+      </p>
+
+      <p id="status" class="status" role="status">Checking this page…</p>
+
+      <form id="settingsForm" class="form">
+        <label class="field">
+          <span class="field-label">Selectors to hide</span>
+          <span class="field-help">One CSS selector per line. Inspect the feed in DevTools if Rumble renames the Shorts row.</span>
+          <textarea id="selectors" rows="6" spellcheck="false"></textarea>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Pages to match</span>
+          <span class="field-help">Use a pathname such as <code>/subscriptions</code>, or a full URL pattern with <code>*</code>. Example: <code>https://rumble.com/*</code> to hide Shorts rows site-wide.</span>
+          <textarea id="urlPatterns" rows="5" spellcheck="false"></textarea>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Extra CSS <span class="optional">(optional)</span></span>
+          <span class="field-help">Use this for wrapper elements Rumble may add around the Shorts row.</span>
+          <textarea id="extraCss" rows="8" spellcheck="false"></textarea>
+        </label>
+
+        <div class="actions">
+          <button id="reset" type="button" class="button secondary">Reset defaults</button>
+          <button id="save" type="submit" class="button primary">Save</button>
+        </div>
+        <p id="saveState" class="save-state" aria-live="polite"></p>
+      </form>
+
+      <section class="docs">
+        <h2>If Shorts come back</h2>
+        <ul>
+          <li>Open <code>https://rumble.com/subscriptions</code> while logged in.</li>
+          <li>Right-click the Shorts row → Inspect.</li>
+          <li>Copy a stable selector (tag name, attribute, or class) into the list above.</li>
+          <li>Save, then reload the feed if the status asks you to.</li>
+        </ul>
+      </section>
+    </div>
+
+    <script src="defaults.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

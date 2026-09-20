@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hide Rumble Shorts</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="popup">
+    <header class="header">
+      <div class="brand">
+        <img class="brand-icon" src="icons/icon.svg" alt="" width="28" height="28" />
+        <div>
+          <h1>Hide Rumble Shorts</h1>
+          <p class="subtitle">Subscriptions feed</p>
+        </div>
+      </div>
+      <label class="toggle" title="Enable or disable hiding Shorts">
+        <input id="enabled" type="checkbox" />
+        <span class="toggle-track" aria-hidden="true"></span>
+        <span id="enabledLabel" class="toggle-label">On</span>
+      </label>
+    </header>
+
+    <p id="status" class="status" role="status">Checking this page…</p>
+
+    <form id="settingsForm" class="form">
+      <label class="field">
+        <span class="field-label">Selectors to hide</span>
+        <span class="field-help">One CSS selector per line. Default targets the Shorts row on My Feed.</span>
+        <textarea id="selectors" rows="4" spellcheck="false"></textarea>
+      </label>
+
+      <label class="field">
+        <span class="field-label">Pages to match</span>
+        <span class="field-help">Path only (<code>/subscriptions</code>) or a full URL with <code>*</code> wildcards. Lines starting with <code>#</code> are ignored.</span>
+        <textarea id="urlPatterns" rows="3" spellcheck="false"></textarea>
+      </label>
+
+      <label class="field">
+        <span class="field-label">Extra CSS <span class="optional">(optional)</span></span>
+        <span class="field-help">Added after the generated hide rules if Rumble wraps Shorts in extra markup.</span>
+        <textarea id="extraCss" rows="3" spellcheck="false" placeholder="/* example */&#10;section:has(rum-shorts-row) { display: none !important; }"></textarea>
+      </label>
+
+      <div class="actions">
+        <button id="reset" type="button" class="button secondary">Reset defaults</button>
+        <button id="save" type="submit" class="button primary">Save</button>
+      </div>
+      <p id="saveState" class="save-state" aria-live="polite"></p>
+    </form>
+
+    <footer class="footer">
+      <a id="optionsLink" href="options.html">Open full options</a>
+    </footer>
+
+    <script src="defaults.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
